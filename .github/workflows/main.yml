@@ -35,5 +35,10 @@ jobs:
         with:
           name: sln
           path: build/LLVM.sln
-      #- name: build
-      #  run: msbuild build/LLVM.sln -targets
+      - name: build
+        run: msbuild build/LLVM.sln -target:llvm-pdbutil
+      - name: upload build output
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build/
