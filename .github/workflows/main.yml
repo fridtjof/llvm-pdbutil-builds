@@ -30,7 +30,7 @@ jobs:
       - name: Generate VS project files
         run: cmake -S llvm -B build -G "Visual Studio 17 2022" -A x64 -Thost=x64 -DLLVM_ENABLE_DIA_SDK=ON
       - name: Build
-        run: msbuild tools\llvm-pdbutil\llvm-pdbutil.vcxproj
+        run: msbuild build\tools\llvm-pdbutil\llvm-pdbutil.vcxproj
       - name: upload build output
         uses: actions/upload-artifact@v2
         with:
