@@ -36,7 +36,7 @@ jobs:
           name: sln
           path: build/LLVM.sln
       - name: build
-        run: msbuild build/LLVM.sln -target:llvm-pdbutil
+        run: msbuild tools\llvm-pdbutil\llvm-pdbutil.vcxproj
       - name: upload build output
         uses: actions/upload-artifact@v2
         with:
